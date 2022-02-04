@@ -3,7 +3,7 @@ import Image from "next/image";
 import MainFeed from "./mainFeed";
 import Navbar from "./navbar";
 
-type Event = "connect";
+type Event = "connect" | "disconnect";
 
 interface Phantom {
   on: (event: Event, callback: () => void) => void;
@@ -24,6 +24,10 @@ const ConnectToPhantom = () => {
   useEffect(() => {
     phantom?.on("connect", () => {
       setConnected(true);
+    });
+
+    phantom?.on("disconnect", () => {
+      setConnected(false);
     });
   }, [phantom]);
 
