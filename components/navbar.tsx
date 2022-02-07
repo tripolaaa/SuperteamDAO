@@ -13,14 +13,6 @@ interface Phantom {
   disconnect: () => Promise<void>;
 }
 
-export const navigation = [
-  { name: "Proof Of Work", href: "./proofOfWorkPage", current: false },
-  { name: "Bounties", href: "./bountiesPage", current: false },
-  { name: "Updates", href: "./updatesPage", current: false },
-  { name: "Collab", href: "./collabPage", current: false },
-  { name: "About", href: "#", current: false },
-];
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -45,8 +37,30 @@ const Navbar: NextPage = () => {
     phantom?.disconnect();
   };
 
-  console.log(router.query)
-  
+  const navigation = [
+    {
+      name: "Proof Of Work",
+      href: "./proofOfWorkPage",
+      current: router.route === "/proofOfWorkPage",
+    },
+    {
+      name: "Bounties",
+      href: "./bountiesPage",
+      current: router.route === "/bountiesPage",
+    },
+    {
+      name: "Updates",
+      href: "./updatesPage",
+      current: router.route === "/updatesPage",
+    },
+    {
+      name: "Collab",
+      href: "./collabPage",
+      current: router.route === "/collabPage",
+    },
+    { name: "About", href: "#", current: router.route === "#" },
+  ];
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -199,4 +213,3 @@ const Navbar: NextPage = () => {
 };
 
 export default Navbar;
-
