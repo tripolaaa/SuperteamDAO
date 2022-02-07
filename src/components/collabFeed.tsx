@@ -1,23 +1,23 @@
 import type { NextPage } from "next";
-import BountiesCard from "../src/Common/BountiesCard";
+import CollabCard from "../Common/CollabCard";
 
-const BountiesFeed: NextPage = () => {
+const MainFeed: NextPage = () => {
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
       <div className="w-full grid grid-cols-1 gap-6 pt-3 pb-3">
-        <BountiesCard />
+        <CollabCard />
       </div>
       <div className="w-full grid grid-cols-1 gap-6 pt-3 pb-3">
-        <BountiesCard />
+        <CollabCard />
       </div>
       <div className="w-full grid grid-cols-1 gap-6 pt-3 pb-3">
-        <BountiesCard />
+        <CollabCard />
       </div>
       <div className="w-full grid grid-cols-1 gap-6 pt-3 pb-3">
-        <BountiesCard />
+        <CollabCard />
       </div>
     </section>
   );
 };
 
-export default BountiesFeed;
+export default MainFeed;
