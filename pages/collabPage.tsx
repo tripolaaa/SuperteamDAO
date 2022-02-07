@@ -6,11 +6,10 @@ import CreateCollabRequest from "../src/Applicables/CreateCollabRequest";
 const CollabPage: NextPage = () => {
   return (
     <>
-    <Navbar />
-    <div className={styles.container}>
-      <CreateCollabRequest />
-      <CollabFeed />
-    </div>
+      <div className={styles.container}>
+        <CreateCollabRequest />
+        <CollabFeed />
+      </div>
     </>
   );
 };

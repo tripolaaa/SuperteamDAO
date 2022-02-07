@@ -6,11 +6,10 @@ import ApplyFilter from "../src/Applicables/ApplyFilter";
 const BountiespPage: NextPage = () => {
   return (
     <>
-    <Navbar />
-    <div className={styles.container}>
-      <ApplyFilter />
-      <BountiesFeed />
-    </div>
+      <div className={styles.container}>
+        <ApplyFilter />
+        <BountiesFeed />
+      </div>
     </>
   );
 };
