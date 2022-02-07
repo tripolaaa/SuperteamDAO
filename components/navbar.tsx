@@ -4,6 +4,7 @@ import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 type Event = "disconnect";
 
@@ -13,7 +14,7 @@ interface Phantom {
 }
 
 export const navigation = [
-  { name: "Proof Of Work", href: "/", current: false },
+  { name: "Proof Of Work", href: "./proofOfWorkPage", current: false },
   { name: "Bounties", href: "./bountiesPage", current: false },
   { name: "Updates", href: "./updatesPage", current: false },
   { name: "Collab", href: "./collabPage", current: false },
@@ -26,6 +27,7 @@ function classNames(...classes) {
 
 const Navbar: NextPage = () => {
   const [phantom, setPhantom] = useState<Phantom | null>(null);
+  const router = useRouter();
   useEffect(() => {
     if ("solana" in window) {
       setPhantom(window["solana"]);
@@ -43,6 +45,8 @@ const Navbar: NextPage = () => {
     phantom?.disconnect();
   };
 
+  console.log(router.query)
+  
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -195,3 +199,4 @@ const Navbar: NextPage = () => {
 };
 
 export default Navbar;
+

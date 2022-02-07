@@ -5,10 +5,10 @@ import UpdatesFeed from "../components/updatesFeed";
 
 const UpdatesPage: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <>
       <Navbar />
       <UpdatesFeed />
-    </div>
+    </>
   );
 };
 
