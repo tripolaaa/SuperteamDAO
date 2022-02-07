@@ -58,7 +58,9 @@ const Navbar: NextPage = () => {
       href: "./collabPage",
       current: router.route === "/collabPage",
     },
-    { name: "About", href: "#", current: router.route === "#" },
+    { name: "About", 
+      href: "./aboutPage", 
+      current: router.route === "/aboutPage" },
   ];
 
   return (

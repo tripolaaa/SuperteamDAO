@@ -1,19 +1,17 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/navbar";
-import BountiesFeed from "../components/bountiesFeed";
-import ApplyFilter from "../src/Applicables/ApplyFilter";
+import About from "../src/Common/About";
 
-const BountiespPage: NextPage = () => {
+const AboutPage: NextPage = () => {
   return (
     <>
     <Navbar />
     <div className={styles.container}>
-      <ApplyFilter />
-      <BountiesFeed />
+        <About/>
     </div>
     </>
   );
 };
 
-export default BountiespPage;
+export default AboutPage;
