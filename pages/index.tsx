@@ -58,8 +58,8 @@ const Index: NextPage = () => {
 
     return (
       <div
-        className="flex justify-center self-center items-center flex-col"
-        style={{ height: "calc(100vh - 64px)" }}
+        className="flex justify-center self-center items-center flex-col bg-gradient-to-bl from-yellow-300 to-yellow-50"
+        style={{ height: "calc(100vh)" }}
       >
         <Image
           src={"/superTeam.jpg"}
@@ -80,8 +80,8 @@ const Index: NextPage = () => {
 
   return (
     <div
-      className="flex justify-center self-center items-center flex-col"
-      style={{ height: "calc(100vh - 64px)" }}
+      className="flex justify-center self-center items-center flex-col bg-gradient-to-bl from-yellow-300 to-yellow-50"
+      style={{ height: "calc(100vh)" }}
     >
       <Image
         src={"/superTeam.jpg"}
