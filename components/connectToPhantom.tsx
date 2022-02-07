@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import MainFeed from "./mainFeed";
+import MainFeed from "./proofOfWork";
 import Navbar from "./navbar";
-
 type Event = "connect" | "disconnect";
 
 interface Phantom {
@@ -35,18 +34,18 @@ const ConnectToPhantom = () => {
     phantom?.connect();
   };
 
-  if (phantom) {
-    if (connected) {
+  if (true) {
+    if (true) {
       return (
         <>
-        <Navbar/>
-        <MainFeed/>
+          <Navbar />
+          <MainFeed />
         </>
       );
     }
 
     return (
-        <div
+      <div
         className="flex justify-center self-center items-center flex-col"
         style={{ height: "calc(100vh - 64px)" }}
       >
@@ -56,8 +55,11 @@ const ConnectToPhantom = () => {
           width={200}
           className={"rounded-lg"}
         />
-        <button onClick={connectHandler} className="rounded-md px-6 py-3 my-6 bg-amber-400 font-bold cursor-pointer hover:bg-amber-600 
-        hover:shadow-lg transition durtion-200 ease-out">
+        <button
+          onClick={connectHandler}
+          className="rounded-md px-6 py-3 my-6 bg-amber-400 font-bold cursor-pointer hover:bg-amber-600 
+        hover:shadow-lg transition durtion-200 ease-out"
+        >
           Connect to Phantom
         </button>
       </div>
@@ -66,23 +68,24 @@ const ConnectToPhantom = () => {
 
   return (
     <div
-        className="flex justify-center self-center items-center flex-col"
-        style={{ height: "calc(100vh - 64px)" }}
-      >
-        <Image
-          src={"/superTeam.jpg"}
-          height={200}
-          width={200}
-          className={"rounded-lg"}
-        />
-        <a 
+      className="flex justify-center self-center items-center flex-col"
+      style={{ height: "calc(100vh - 64px)" }}
+    >
+      <Image
+        src={"/superTeam.jpg"}
+        height={200}
+        width={200}
+        className={"rounded-lg"}
+      />
+      <a
         href="https://phantom.app/"
         target="_blank"
         className="rounded-md px-6 py-3 my-6 bg-amber-400 font-bold cursor-pointer hover:bg-amber-600 
-        hover:shadow-lg transition durtion-200 ease-out">
-          Get Phantom
-        </a>
-      </div>
+        hover:shadow-lg transition durtion-200 ease-out"
+      >
+        Get Phantom
+      </a>
+    </div>
   );
 };
 

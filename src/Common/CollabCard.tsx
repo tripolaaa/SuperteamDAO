@@ -1,7 +1,11 @@
 import React from "react";
-import { HeartIcon, ChatAltIcon, ShareIcon } from "@heroicons/react/outline";
+import {
+  CheckCircleIcon,
+  BookmarkIcon,
+  FlagIcon,
+} from "@heroicons/react/outline";
 
-function CardContainer() {
+function ColladCard() {
   return (
     <div className="bg-white rounded-lg py-6 px-10 border-2">
       <div className="flex items-center space-x-6 mb-4">
@@ -32,15 +36,15 @@ function CardContainer() {
         </p>
       </div>
       <div className="flex flex-row justify-end mt-4">
-        <HeartIcon
+        <CheckCircleIcon
           className="h-8 w-8 text-gray-400 ml-10 cursor-pointer"
           aria-hidden="true"
         />
-        <ChatAltIcon
+        <BookmarkIcon
           className="h-8 w-8 text-gray-400 ml-10 cursor-pointer"
           aria-hidden="true"
         />
-        <ShareIcon
+        <FlagIcon
           className="h-8 w-8 text-gray-400 ml-10 cursor-pointer"
           aria-hidden="true"
         />
@@ -49,4 +53,4 @@ function CardContainer() {
   );
 }
 
-export default CardContainer;
+export default ColladCard;
