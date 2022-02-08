@@ -1,12 +1,10 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
-import Navbar from "../components/navbar";
-import UpdatesFeed from "../components/updatesFeed";
+import UpdatesFeed from "../src/components/updatesFeed";
 
 const UpdatesPage: NextPage = () => {
   return (
     <>
-      <Navbar />
       <UpdatesFeed />
     </>
   );

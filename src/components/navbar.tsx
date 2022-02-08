@@ -5,6 +5,8 @@ import Image from "next/image";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { AuthContext } from "../contexts/AuthContext";
+import React from "react";
 
 type Event = "disconnect";
 
@@ -17,53 +19,54 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Navbar: NextPage = () => {
+const Navbar: any = () => {
   const [phantom, setPhantom] = useState<Phantom | null>(null);
+  const { isLoggedIn } = React.useContext(AuthContext);
   const router = useRouter();
   useEffect(() => {
     if ("solana" in window) {
       setPhantom(window["solana"]);
     }
   }, []);
-  const [connected, setConnected] = useState(false);
+  // const [connected, setConnected] = useState(false);
 
-  useEffect(() => {
-    phantom?.on("disconnect", () => {
-      setConnected(false);
-    });
-  }, [phantom]);
+  // useEffect(() => {
+  //   phantom?.on("disconnect", () => {
+  //     setConnected(false);
+  //   });
+  // }, [phantom]);
 
   const disconnectHandler = () => {
     phantom?.disconnect();
   };
-
   const navigation = [
     {
       name: "Proof Of Work",
-      href: "./proofOfWorkPage",
+      href: "/proofOfWorkPage",
       current: router.route === "/proofOfWorkPage",
     },
     {
       name: "Bounties",
-      href: "./bountiesPage",
+      href: "/bountiesPage",
       current: router.route === "/bountiesPage",
     },
     {
       name: "Updates",
-      href: "./updatesPage",
+      href: "/updatesPage",
       current: router.route === "/updatesPage",
     },
     {
       name: "Collab",
-      href: "./collabPage",
+      href: "/collabPage",
       current: router.route === "/collabPage",
     },
     { name: "About", 
-      href: "./aboutPage", 
-      current: router.route === "/aboutPage" },
+      href: "/aboutPage", 
+      current: router.route === "/aboutPage" 
+    },
   ];
-
-  return (
+  console.log("isLoggedIn :>> ", isLoggedIn);
+  return isLoggedIn ? (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
@@ -95,12 +98,14 @@ const Navbar: NextPage = () => {
                     {navigation.map((item) => (
                       <a
                         key={item.name}
-                        href={item.href}
+                        onClick={() => {
+                          router.push(item.href);
+                        }}
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "px-3 py-2 rounded-md text-xl font-medium"
+                          "px-3 py-2 rounded-md text-xl font-medium cursor-pointer"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -171,7 +176,8 @@ const Navbar: NextPage = () => {
                         {({ active }) => (
                           <a
                             onClick={disconnectHandler}
-                            href="#"
+                            href="/"
+                            // onClick={() => router.push("/")}
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 py-2 text-sm text-gray-700"
@@ -193,8 +199,12 @@ const Navbar: NextPage = () => {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
+                  onClick={() => {
+                    router.push(item.href);
+                    console.log("Clicked");
+                  }}
                   as="a"
-                  href={item.href}
+                  // href={item.href}
                   className={classNames(
                     item.current
                       ? "bg-gray-900 text-white"
@@ -211,6 +221,8 @@ const Navbar: NextPage = () => {
         </>
       )}
     </Disclosure>
+  ) : (
+    []
   );
 };
 
