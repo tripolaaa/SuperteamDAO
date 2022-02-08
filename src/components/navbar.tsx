@@ -60,7 +60,10 @@ const Navbar: any = () => {
       href: "/collabPage",
       current: router.route === "/collabPage",
     },
-    { name: "About", href: "#", current: router.route === "#" },
+    { name: "About", 
+      href: "/aboutPage", 
+      current: router.route === "/aboutPage" 
+    },
   ];
   console.log("isLoggedIn :>> ", isLoggedIn);
   return isLoggedIn ? (
@@ -102,7 +105,7 @@ const Navbar: any = () => {
                           item.current
                             ? "bg-gray-900 text-white"
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "px-3 py-2 rounded-md text-xl font-medium"
+                          "px-3 py-2 rounded-md text-xl font-medium cursor-pointer"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
