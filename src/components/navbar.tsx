@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
-import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { AuthContext } from "../contexts/AuthContext";
@@ -88,10 +87,10 @@ const Navbar: any = () => {
                   <Image
                     className="block lg:hidden h-8 w-auto "
                     src="/superTeam.jpg"
-                    alt="Workflow"
+                    alt="SuperTeam Logo"
                     height={36}
                     width={36}
-                  />
+                  /> 
                 </div>
                 <div className="hidden sm:block sm:ml-8">
                   <div className="flex space-x-8">
