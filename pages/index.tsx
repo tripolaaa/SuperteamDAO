@@ -49,7 +49,7 @@ const Index: NextPage = () => {
             <link rel="icon" href="/favicon.ico" />
           </Head>
           <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-6 px-10">
-              <div className="flex justify-center space-x-6 my-5">
+              <div className="flex justify-center space-x-6 my-10 p-10">
                 <Image
                 className="rounded-3xl"
                 src="/mainPage.png"
